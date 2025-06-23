@@ -6,6 +6,11 @@
   <title>Pigki</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --main: #00c853;
+      --nav-bg: #181818;
+      --nav-active: #242424;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -13,67 +18,129 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom, #0f0f0f, #1f1f1f);
+      background: linear-gradient(to bottom, #101010 0%, #23272f 100%);
       color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
+      padding: 0;
+      position: relative;
     }
-    img.logo {
-      max-width: 200px;
-      margin-bottom: 30px;
+    nav {
+      width: 100%;
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 22px 0 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      box-shadow: 0 2px 24px #0002;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 9px 20px 9px 20px;
+      border-radius: 8px;
+      font-size: 1.06rem;
+      transition: background 0.19s, color 0.19s;
+    }
+    nav a.active, nav a:hover {
+      background: var(--nav-active);
+      color: var(--main);
+    }
+    .container {
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 54px 16px 0 16px;
+      text-align: center;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -0.01em;
+      line-height: 1.12;
+      background: linear-gradient(90deg, var(--main), #62e288 70%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px #10ef7148);
     }
     p.description {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 40px;
-      max-width: 600px;
+      font-size: 1.18rem;
+      color: #c4c8d1;
+      margin-bottom: 38px;
+      margin-top: 3px;
+      line-height: 1.7;
+      font-weight: 400;
     }
     a.download-button {
-      background-color: #00c853;
+      background-color: var(--main);
       color: white;
       text-decoration: none;
-      padding: 15px 30px;
+      padding: 16px 36px;
       border-radius: 8px;
       font-weight: bold;
+      font-size: 1.07rem;
       transition: background-color 0.3s;
+      box-shadow: 0 4px 24px #10ef7165;
+      display: inline-block;
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
     }
     a.download-button:hover {
       background-color: #00b34f;
     }
     footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #666;
+      width: 100%;
+      text-align: center;
+      padding: 16px 0 20px 0;
+      color: #7e8492;
+      font-size: 0.98rem;
+      background: none;
+      letter-spacing: 0.01em;
+      margin-top: auto;
     }
     @media (max-width: 600px) {
       h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
-      .description {
-        font-size: 1rem;
+      .container {
+        padding-top: 34px;
+      }
+      p.description {
+        font-size: 1.05rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Pigki</h1>
-  <p class="description">Better Apps and Games For You
-We are team of talented designers making games and apps
-</p>
-  
-  <a href="https://play.google.com/store/apps/dev?id=7799468506865829319" class="download-button">Go to my Google Store</a>
-
-  <footer>© Copyright Pigki. All Rights Reserved</footer>
-
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <div class="container">
+    <h1>Pigki</h1>
+    <p class="description">
+      Better Apps and Games For You.<br>
+      We are a team of talented designers making games and apps.
+    </p>
+    <a href="https://play.google.com/store/apps/dev?id=7799468506865829319" class="download-button" target="_blank" rel="noopener">Go to my Google Store</a>
+  </div>
+  <footer>
+    © Copyright Pigki. All Rights Reserved
+  </footer>
 </body>
 </html>
